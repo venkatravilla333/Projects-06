@@ -24,8 +24,13 @@ function Home() {
   }, [])
   return (
     <div className='m-5'>
-      <div>
+      <div className='d-flex justify-content-between'>
         <h4>List of Products</h4>
+        <div>
+          <Link to={`/products/create`}>
+            <i className="bi bi-plus-square fs-3"></i>
+          </Link>
+        </div>
       </div>
       {loading ? (
         <Spinner />
