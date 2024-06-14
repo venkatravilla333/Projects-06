@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Spinner from '../components/Spinner'
+import BackButton from '../components/BackButton'
 
 function ShowProduct() {
  var [product, setProduct] = useState({})
@@ -25,7 +26,10 @@ function ShowProduct() {
 
   return (
     <div className='my-5 '>
-      <h4>Products details</h4>
+      <div className='text-start ms-4'>
+      <BackButton/>
+      </div>
+      <h4 className='mt-4'>Products details</h4>
       {loading ? <Spinner /> :
         <div className='d-flex justify-content-center'>
           <div className='bg-warning w-50 p-3 fw-bold'>

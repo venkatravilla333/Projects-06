@@ -6,8 +6,10 @@ import Spinner from '../components/Spinner'
 function Home() {
   var [products, setProducts] = useState([])
   var [loading, setLoading] = useState(false)
+  console.log('render')
   
   useEffect(() => {
+    console.log('effect runs')
     setLoading(true)
     axois.get('http://localhost:5000/products')
       .then((res) => {
@@ -38,7 +40,7 @@ function Home() {
         <div className='mx-2 d-flex justify-content-center my-4'>
           <table className='w-100 border border-2 border-primary table'>
             <thead>
-              <tr className='border border-2 border-primary'>
+              <tr className='border border-2 border-primary bg-dark'>
                 <th>No</th>
                 <th>Name</th>
                 <th>Price</th>

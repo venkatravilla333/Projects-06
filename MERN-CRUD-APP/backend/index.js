@@ -11,6 +11,7 @@ import cors from 'cors'
 var app = express()
 
 app.use(cors())
+
 app.use(express.json()) 
 
 app.get('/', (req, res) => {
