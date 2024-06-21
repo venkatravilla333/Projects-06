@@ -11,7 +11,7 @@ function Product({product}) {
       <strong>Name: {product.name}</strong>
       <strong>Price: {product.price}</strong>
       <div>
-        <Rating value={product.rating} reviewtext={`${product.reviews} reviews`} />
+        <Rating value={product.rating} reviewtext={`${product.numreviews} reviews`} />
       </div>
     </div>
   );

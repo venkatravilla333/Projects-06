@@ -39,7 +39,7 @@ function ProductDescriptionScreen() {
             <h5>
               <Rating
                 value={product.rating}
-                reviewtext={`${product.reviews} reviews`}
+                reviewtext={`${product.numreviews} reviews`}
               />
             </h5>
             <p>Description: {product.description}</p>
