@@ -192,3 +192,92 @@
 
 // var inner = outer()
 // inner()
+
+
+//local storage vs session storage
+//set
+
+var lsetBtn = document.getElementById('lset')
+
+var lsetFun = () => {
+  window.localStorage.setItem('name', 'sachin')
+  window.localStorage.setItem('age', 40)
+}
+
+lsetBtn.addEventListener('click', lsetFun)
+
+// get 
+var lgetBtn = document.getElementById('lget')
+
+var lgetFun = () => {
+  console.log(window.localStorage.getItem('name'))
+  console.log(window.localStorage.getItem('age'))
+}
+
+lgetBtn.addEventListener('click', lgetFun)
+
+//remove item
+
+var lremoveBtn = document.getElementById('lremove');
+
+var lremoveFun = () => {
+  window.localStorage.removeItem('name')
+  window.localStorage.removeItem('age')
+};
+
+lremoveBtn.addEventListener('click', lremoveFun);
+
+//clear
+
+var lclearBtn = document.getElementById('lclear');
+
+var lclearFun = () => {
+  window.localStorage.clear();
+  
+};
+
+lclearBtn.addEventListener('click', lclearFun);
+
+// session
+
+// set 
+var ssetBtn = document.getElementById('sset')
+
+var ssetFun = () => {
+  window.sessionStorage.setItem('name', 'dhoni')
+  window.sessionStorage.setItem('age', 30)
+}
+
+ssetBtn.addEventListener('click', ssetFun)
+
+//get
+
+var sgetBtn = document.getElementById('sget');
+
+var sgetFun = () => {
+  console.log(window.sessionStorage.getItem('name'));
+  console.log(window.sessionStorage.getItem('age'));
+};
+
+sgetBtn.addEventListener('click', sgetFun);
+
+//remove item
+
+var sremoveBtn = document.getElementById('sremove');
+
+var sremoveFun = () => {
+  // window.sessionStorage.removeItem('name');
+  window.sessionStorage.removeItem('age');
+};
+
+sremoveBtn.addEventListener('click', sremoveFun);
+
+//clear
+
+var sclearBtn = document.getElementById('sclear');
+
+var sclearFun = () => {
+  window.sessionStorage.clear();
+};
+
+sclearBtn.addEventListener('click', sclearFun);
