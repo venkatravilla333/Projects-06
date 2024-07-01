@@ -4,7 +4,7 @@ import { buyCake } from '../Toolkit/slices/cakeSlice'
 // import { buyCake } from '../Redux/cake/cakeAction'
 
 function CakeComponent() {
-  var cakeState = useSelector((state) => state.cakeReducer)
+  var cakeState = useSelector((state) => state.cake)
  var dispatch = useDispatch()
   console.log(cakeState)
   return (

@@ -4,7 +4,7 @@ import { decrease, increase } from '../Toolkit/slices/countSlice'
 // import { decrease, increase } from '../Redux/count/countAction';
 
 function CountComponent() {
-  var countState = useSelector((state) => state.countReducer)
+  var countState = useSelector((state) => state.count)
  var dispatch = useDispatch()
   console.log(countState)
   return (
