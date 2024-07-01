@@ -312,7 +312,7 @@ var originalObj = {
 // var copiedObj = originalObj //normal copy
 // var copiedObj = Object.assign({}, originalObj)//shallow copy
 // var copiedObj = {...originalObj}//shallow copy
-var copiedObj = JSON.parse(JSON.stringify(originalObj)) //deep copy
+// var copiedObj = JSON.parse(JSON.stringify(originalObj)) //deep copy
 // var copiedObj = lodash.cloneDeep(originalObj) //deep copy
 
 
