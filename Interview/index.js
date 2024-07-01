@@ -197,87 +197,127 @@
 //local storage vs session storage
 //set
 
-var lsetBtn = document.getElementById('lset')
+// var lsetBtn = document.getElementById('lset')
 
-var lsetFun = () => {
-  window.localStorage.setItem('name', 'sachin')
-  window.localStorage.setItem('age', 40)
-}
+// var lsetFun = () => {
+//   window.localStorage.setItem('name', 'sachin')
+//   window.localStorage.setItem('age', 40)
+// }
 
-lsetBtn.addEventListener('click', lsetFun)
+// lsetBtn.addEventListener('click', lsetFun)
 
-// get 
-var lgetBtn = document.getElementById('lget')
+// // get
+// var lgetBtn = document.getElementById('lget')
 
-var lgetFun = () => {
-  console.log(window.localStorage.getItem('name'))
-  console.log(window.localStorage.getItem('age'))
-}
+// var lgetFun = () => {
+//   console.log(window.localStorage.getItem('name'))
+//   console.log(window.localStorage.getItem('age'))
+// }
 
-lgetBtn.addEventListener('click', lgetFun)
+// lgetBtn.addEventListener('click', lgetFun)
 
-//remove item
+// //remove item
 
-var lremoveBtn = document.getElementById('lremove');
+// var lremoveBtn = document.getElementById('lremove');
 
-var lremoveFun = () => {
-  window.localStorage.removeItem('name')
-  window.localStorage.removeItem('age')
-};
+// var lremoveFun = () => {
+//   window.localStorage.removeItem('name')
+//   window.localStorage.removeItem('age')
+// };
 
-lremoveBtn.addEventListener('click', lremoveFun);
+// lremoveBtn.addEventListener('click', lremoveFun);
 
-//clear
+// //clear
 
-var lclearBtn = document.getElementById('lclear');
+// var lclearBtn = document.getElementById('lclear');
 
-var lclearFun = () => {
-  window.localStorage.clear();
+// var lclearFun = () => {
+//   window.localStorage.clear();
   
-};
+// };
 
-lclearBtn.addEventListener('click', lclearFun);
+// lclearBtn.addEventListener('click', lclearFun);
 
-// session
+// // session
 
-// set 
-var ssetBtn = document.getElementById('sset')
+// // set
+// var ssetBtn = document.getElementById('sset')
 
-var ssetFun = () => {
-  window.sessionStorage.setItem('name', 'dhoni')
-  window.sessionStorage.setItem('age', 30)
+// var ssetFun = () => {
+//   window.sessionStorage.setItem('name', 'dhoni')
+//   window.sessionStorage.setItem('age', 30)
+// }
+
+// ssetBtn.addEventListener('click', ssetFun)
+
+// //get
+
+// var sgetBtn = document.getElementById('sget');
+
+// var sgetFun = () => {
+//   console.log(window.sessionStorage.getItem('name'));
+//   console.log(window.sessionStorage.getItem('age'));
+// };
+
+// sgetBtn.addEventListener('click', sgetFun);
+
+// //remove item
+
+// var sremoveBtn = document.getElementById('sremove');
+
+// var sremoveFun = () => {
+//   // window.sessionStorage.removeItem('name');
+//   window.sessionStorage.removeItem('age');
+// };
+
+// sremoveBtn.addEventListener('click', sremoveFun);
+
+// //clear
+
+// var sclearBtn = document.getElementById('sclear');
+
+// var sclearFun = () => {
+//   window.sessionStorage.clear();
+// };
+
+// sclearBtn.addEventListener('click', sclearFun);
+
+
+//copy or clone
+
+// import lodash from 'lodash'
+var lodash = require('lodash')
+
+// primitives
+
+// var x = 10
+
+// var y = x
+
+// y = 20
+
+// console.log(x)
+// console.log(y)
+
+//reference (object)
+
+var originalObj = {
+  name: 'sachin',
+  address: { road: 101 },
+  play: () => {
+    
+  }
 }
 
-ssetBtn.addEventListener('click', ssetFun)
+// var copiedObj = originalObj //normal copy
+// var copiedObj = Object.assign({}, originalObj)//shallow copy
+// var copiedObj = {...originalObj}//shallow copy
+var copiedObj = JSON.parse(JSON.stringify(originalObj)) //deep copy
+// var copiedObj = lodash.cloneDeep(originalObj) //deep copy
 
-//get
 
-var sgetBtn = document.getElementById('sget');
 
-var sgetFun = () => {
-  console.log(window.sessionStorage.getItem('name'));
-  console.log(window.sessionStorage.getItem('age'));
-};
-
-sgetBtn.addEventListener('click', sgetFun);
-
-//remove item
-
-var sremoveBtn = document.getElementById('sremove');
-
-var sremoveFun = () => {
-  // window.sessionStorage.removeItem('name');
-  window.sessionStorage.removeItem('age');
-};
-
-sremoveBtn.addEventListener('click', sremoveFun);
-
-//clear
-
-var sclearBtn = document.getElementById('sclear');
-
-var sclearFun = () => {
-  window.sessionStorage.clear();
-};
-
-sclearBtn.addEventListener('click', sclearFun);
+copiedObj.name = 'kohli'
+copiedObj.address.road = 201
+console.log(originalObj)
+console.log(copiedObj)
