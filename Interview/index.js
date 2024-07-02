@@ -286,7 +286,7 @@
 //copy or clone
 
 // import lodash from 'lodash'
-var lodash = require('lodash')
+// var lodash = require('lodash')
 
 // primitives
 
@@ -301,13 +301,13 @@ var lodash = require('lodash')
 
 //reference (object)
 
-var originalObj = {
-  name: 'sachin',
-  address: { road: 101 },
-  play: () => {
+// var originalObj = {
+//   name: 'sachin',
+//   address: { road: 101 },
+//   play: () => {
     
-  }
-}
+//   }
+// }
 
 // var copiedObj = originalObj //normal copy
 // var copiedObj = Object.assign({}, originalObj)//shallow copy
@@ -315,9 +315,103 @@ var originalObj = {
 // var copiedObj = JSON.parse(JSON.stringify(originalObj)) //deep copy
 // var copiedObj = lodash.cloneDeep(originalObj) //deep copy
 
+// copiedObj.name = 'kohli'
+// copiedObj.address.road = 201
+// console.log(originalObj)
+// console.log(copiedObj)
 
 
-copiedObj.name = 'kohli'
-copiedObj.address.road = 201
-console.log(originalObj)
-console.log(copiedObj)
+//Mis functions
+
+
+//first class function and HOF and CBF
+
+// var x = function test(y) {
+//   console.log('HOF')
+//   y()
+//   return function z() {
+//     console.log('Z fun')
+//   }
+// }
+
+// var Z = x(function y() {
+//   console.log('CBF')
+// })
+
+// Z()
+
+
+//pure vs impure
+
+// function pure(a,b,c) {
+//   var result = a + b + c
+//   return result
+// }
+
+// console.log(pure(1, 2, 3))
+
+// function impure(a, b, c) {
+  
+//   var d = Math.random()
+//   var result = a+b+c+d
+//   return result
+// }
+// console.log(impure(1,2,3))
+
+//IIFE (ES-5) (ES-6 MODULES)
+
+// (() => {
+//   var a = 10
+  
+//   var b = function () { }
+// })()
+
+// console.log(a)
+
+//Function currying
+
+// without curry
+
+function test(a,b,c) {
+  console.log(a+b+c)
+}
+test(1,2,3)
+
+// with curry
+
+// function test1(a) {
+//   return function test2(b) {
+//     return function test3(c) {
+//       console.log(a+b+c)
+//     }
+//   }
+// }
+
+// test1(1)(2)(3)
+
+
+// function calPrice(price, dis) {
+//   var disAmount = price * dis
+//   return disAmount
+// }
+
+// console.log(calPrice(1000, .1))
+// console.log(calPrice(1000, .2))
+// console.log(calPrice(1000, .3))
+// console.log(calPrice(1000, .4))
+// console.log(calPrice(1000, .5))
+
+// function calPrice(price) {
+//   return function calDis(dis) {
+//     var disAmount = price * dis
+//     return disAmount
+//   }
+// }
+
+// var calDis = calPrice(1000)
+// console.log(calDis(.1))
+// console.log(calDis(.2))
+// console.log(calDis(.3))
+// console.log(calDis(.4))
+// console.log(calDis(.5))
+
