@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 // import { products } from '../products'
 import Product from '../Components/Product'
-import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
-import {fetchProducts } from '../Redux/actions/productActions'
+import { fetchAllProducts } from '../toolkit/Slices/productSlice/getAllProductsSlice'
+// import {fetchProducts } from '../Redux/actions/productActions'
 
 function HomeScreen() {
 //  var [products, setProducts] = useState([])
@@ -22,19 +22,20 @@ function HomeScreen() {
   var dispatch = useDispatch()
 
   useEffect(() => {
-  return dispatch(fetchProducts())
+      dispatch(fetchAllProducts())
   }, [])
 
-  var data = useSelector((state) => state)
+  var allProductsData = useSelector((state) => state.allproducts)
+  console.log(allProductsData)
   
-  var {loading, products, error} = data
+  var {loading, products, error} = allProductsData
   
 
   return (
     <div className='container'>
       <div className='row my-3'>
         {products.map((product) => {
-          return <Product product={product} />
+          return <Product key={product._id} product={product} />
         })}
       </div>
     </div>

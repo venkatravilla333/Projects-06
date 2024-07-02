@@ -2,22 +2,33 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 // import { products } from '../products'
 import Rating from '../Components/Rating'
-import axios from 'axios'
+// import axios from 'axios'
+import {useDispatch, useSelector} from 'react-redux'
+import { fetchSingleProduct } from '../toolkit/Slices/productSlice/getSingleProductSlice'
 
 function ProductDescriptionScreen() {
+  
+  var dispatch = useDispatch()
+  var singleProductData = useSelector((state) => state.singleproduct);
+  
+  var { loading, product, error } = singleProductData
+  console.log(singleProductData)
+
   var { id: productid } = useParams()
-  var [product, setProduct] = useState({})
+  // var [product, setProduct] = useState({})
   
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/products/${productid}`)
-      .then((res) => {
-        console.log(res);
-        setProduct(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // axios
+    //   .get(`http://localhost:5000/products/${productid}`)
+    //   .then((res) => {
+    //     console.log(res);
+    //     setProduct(res.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    dispatch(fetchSingleProduct(productid))
+    
   }, [productid])
 
   // var product = products.find((p) => p._id === productid)
@@ -42,7 +53,8 @@ function ProductDescriptionScreen() {
                 reviewtext={`${product.numreviews} reviews`}
               />
             </h5>
-            <p>Description: {product.description}</p>
+            <span className='fw-medium'>Description:</span>
+            <span className='ms-3'>{product.description}</span>
           </div>
           <div className='col-4 my-4'>
             <div>
