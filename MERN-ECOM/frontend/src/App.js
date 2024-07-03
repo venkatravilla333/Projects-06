@@ -7,6 +7,8 @@ import {Routes, Route} from 'react-router-dom'
 import ProductDescriptionScreen from './Screens/ProductDescriptionScreen';
 import { store } from './toolkit/store';
 import {Provider} from 'react-redux'
+import SignupScreen from './Screens/SignupScreen';
+import LoginScreen from './Screens/LoginScreen';
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
         <main className='main'>
           <Routes>
             <Route path='/' element={<HomeScreen />} />
+            <Route path='/signup' element={<SignupScreen />} />
+            <Route path='/login' element={<LoginScreen />} />
             <Route
               path='/products/:id'
               element={<ProductDescriptionScreen />}

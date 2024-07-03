@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from './logo-999.png'
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -9,9 +10,9 @@ function Header() {
           <a href=''>
             <img src={logo} alt='' width='42px' className='pe-1' />
           </a>
-          <a className='navbar-brand fw-bold' href='#'>
+          <Link to='/' className='navbar-brand fw-bold' href='#'>
             REYAN STORE
-          </a>
+          </Link>
           <button
             className='navbar-toggler'
             type='button'
@@ -26,14 +27,14 @@ function Header() {
           <div className='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
               <li className='nav-item'>
-                <a className='nav-link' aria-current='page' href='#'>
+                <a className='nav-link fw-medium' aria-current='page' href='#'>
                   Cart
                 </a>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='#'>
+                <Link className='nav-link fw-medium' to='/signup'>
                   Signup
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
