@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+
+import {useDispatch, useSelector} from 'react-redux'
+import { registerUser } from '../toolkit/Slices/userSlice/registerUserSlice'
+
 function SignupScreen() {
 
  let [name, setName] =  useState('')
  let [email, setEmail] =  useState('')
  let [password, setPassword] =  useState('')
   let [cpassword, setcPassword] = useState('');
-  
-  
+
+var dispatch = useDispatch()
+
 
   var submitHandler = (e) => {
     e.preventDefault()
@@ -19,12 +23,7 @@ function SignupScreen() {
       cpassword
     }
     console.log(newUser)
-    axios.post('')
-      .then((res) => {
-      console.log(res)
-      }).catch((error) => {
-      console.log(error)
-    })
+    dispatch(registerUser(newUser))
   }
 
   return (

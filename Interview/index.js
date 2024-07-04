@@ -372,10 +372,10 @@
 
 // without curry
 
-function test(a,b,c) {
-  console.log(a+b+c)
-}
-test(1,2,3)
+// function test(a,b,c) {
+//   console.log(a+b+c)
+// }
+// test(1,2,3)
 
 // with curry
 
@@ -415,3 +415,50 @@ test(1,2,3)
 // console.log(calDis(.4))
 // console.log(calDis(.5))
 
+//DOM
+
+// var parent = document.getElementById('parent')
+// var child = document.getElementById('child')
+// var subchild = document.getElementById('subchild')
+
+// var parentFun = (x) => {
+//   console.log('parent')
+//   console.log(x)
+// }
+// var childFun = (x) => {
+//   console.log('child')
+//   console.log(x)
+// }
+// var subchildFun = (x) => {
+//   console.log('sub child')
+//   console.log(x)
+//   x.stopPropagation()
+//   console.log(x.target)
+//   console.log(x.clientX)
+//   console.log(x.clientY)
+//   console.log(x.offsetX)
+//   console.log(x.offsetY)
+  
+// }
+
+//bubbling
+
+// parent.addEventListener('click', parentFun, false)
+// child.addEventListener('click', childFun, false)
+// subchild.addEventListener('click', subchildFun, false)
+
+//capturing
+
+// parent.addEventListener('click', parentFun, true)
+// child.addEventListener('click', childFun, true)
+// subchild.addEventListener('click', subchildFun, true)
+
+//event delegatin
+
+// var table = document.getElementById('table')
+
+// var tableFun = () => {
+//   console.log('clicked')
+// }
+
+// table.addEventListener('click', tableFun)
