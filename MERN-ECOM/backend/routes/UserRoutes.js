@@ -63,7 +63,8 @@ router.post('/login', async (req, res) => {
         if (err) {
             throw new Error('Token not generated')
         } else {
-          res.json({token: token})
+          res.json({ token:token})
+          console.log(token)
         }
         })
     }

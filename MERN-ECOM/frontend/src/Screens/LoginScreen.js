@@ -1,25 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import {useDispatch} from 'react-redux'
+import { loginUser } from '../toolkit/Slices/userSlice/loginUserSlice';
 function LoginScreen() {
   let [email, setEmail] = useState('');
   let [password, setPassword] = useState('');
 
+  var dispatch = useDispatch()
+
   var submitHandler = (e) => {
     e.preventDefault();
-    var newUser = {
+    var user= {
       email,
       password,
     };
-    console.log(newUser);
-    axios
-      .post('')
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    console.log(user);
+    dispatch(loginUser(user))
+  
   };
 
   return (

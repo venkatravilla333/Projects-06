@@ -9,6 +9,7 @@ import { store } from './toolkit/store';
 import {Provider} from 'react-redux'
 import SignupScreen from './Screens/SignupScreen';
 import LoginScreen from './Screens/LoginScreen';
+import Profile from './Screens/Profile';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
               path='/products/:id'
               element={<ProductDescriptionScreen />}
             />
+            <Route path='/profile' element={<Profile/>} />
           </Routes>
         </main>
         <Footer />
