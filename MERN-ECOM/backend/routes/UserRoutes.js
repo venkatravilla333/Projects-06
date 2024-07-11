@@ -56,10 +56,11 @@ router.post('/login', async (req, res) => {
      res.status(400).send('Invalid credential')
     } else {
       var payload = {
-        userId: existUser._id
+         userId: existUser._id 
       }
+      
 
-      jwt.sign(payload, 'secretkey', { expiresIn: 1000*60*60*24}, (err, token) => {
+      jwt.sign(payload, 'hello', (err, token) => {
         if (err) {
             throw new Error('Token not generated')
         } else {

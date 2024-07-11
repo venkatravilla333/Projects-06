@@ -9,6 +9,7 @@ import cors from 'cors'
 
 import ProductRoutes from './routes/ProductRoutes.js'
 import UserRoutes from './routes/UserRoutes.js'
+import ProfileRoutes from './routes/ProfileRoutes.js'
 
 var app = express()
 app.use(express.json())
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 
 app.use('/', ProductRoutes)
 app.use('/', UserRoutes)
+app.use('/', ProfileRoutes )
 
 
 app.listen(PORT, () => {
