@@ -6,6 +6,7 @@ import productReducer from './Slices/productSlice/getSingleProductSlice'
 import registerUserRedcer from './Slices/userSlice/registerUserSlice'
 import loginUserReducer from './Slices/userSlice/loginUserSlice'
 import profileReducer from './Slices/profileSlice/profileSlice'
+import cartReducer from './Slices/cartSlice/cartSlice'
 
 export var store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export var store = configureStore({
     singleproduct: productReducer,
     registerUser: registerUserRedcer,
     loginUser: loginUserReducer,
-    profileSlice:profileReducer
+    profileSlice: profileReducer,
+    cartSlice: cartReducer
   }
 })

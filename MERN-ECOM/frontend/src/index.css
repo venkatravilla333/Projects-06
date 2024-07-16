@@ -14,7 +14,7 @@ code {
 
 .card{
   width: 269px !important;
-  height: 242px !important;
+  min-height: 260px !important;
   
 }
 

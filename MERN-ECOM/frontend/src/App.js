@@ -5,11 +5,11 @@ import HomeScreen from './Screens/HomeScreen';
 import Footer from './Components/Footer';
 import {Routes, Route} from 'react-router-dom'
 import ProductDescriptionScreen from './Screens/ProductDescriptionScreen';
-import { store } from './toolkit/store';
 import {Provider} from 'react-redux'
 import SignupScreen from './Screens/SignupScreen';
 import LoginScreen from './Screens/LoginScreen';
 import Profile from './Screens/Profile';
+import { store } from './toolkit/store';
 
 function App() {
 
